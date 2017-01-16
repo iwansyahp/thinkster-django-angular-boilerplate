@@ -2,26 +2,27 @@
 * PostsController
 * @namespace thinkster.posts.controllers
 */
-(function(){
-    'use strict';
+(function () {
+  'use strict';
 
-    angular
-        .module('thinkster.posts.controller')
-        .controller('PostsController', PostsController);
+  angular
+    .module('thinkster.posts.controllers')
+    .controller('PostsController', PostsController);
 
-    PostsController.$inject = ['$scope'];
+  PostsController.$inject = ['$scope'];
 
-    /**
+  /**
   * @namespace PostsController
   */
-  function PostsController($scope){
-      var vm = this;
+  function PostsController($scope) {
+    var vm = this;
 
-      vm.columns = [];
-      
-      activate();
+    vm.columns = [];
 
-      /**
+    activate();
+
+
+    /**
     * @name activate
     * @desc Actions to be performed when this controller is instantiated
     * @memberOf thinkster.posts.controllers.PostsController
@@ -31,7 +32,8 @@
       $scope.$watch(function () { return $(window).width(); }, render);
     }
 
-     /**
+
+    /**
     * @name calculateNumberOfColumns
     * @desc Calculate number of columns based on screen width
     * @returns {Number} The number of columns containing Posts
@@ -50,6 +52,7 @@
         return 1;
       }
     }
+
 
     /**
     * @name approximateShortestColumn
@@ -88,7 +91,9 @@
         return m + n;
       }
     }
- /**
+
+
+    /**
     * @name render
     * @desc Renders Posts into columns of approximately equal height
     * @param {Array} current The current value of `vm.posts`

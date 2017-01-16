@@ -11,11 +11,11 @@ router.register(r'accounts', AccountViewSet)
 
 router.register(r'posts', PostViewSet)
 
-accounts_router = routers.NestedSimpleRouter(
+account_router = routers.NestedSimpleRouter(
     router, r'accounts', lookup='account'
 )
 
-accounts_router.register(r'posts', AccountPostsViewSet)
+account_router.register(r'posts', AccountPostViewSet)
 
 urlpatterns = patterns(
     '',

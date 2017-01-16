@@ -10,7 +10,8 @@ from posts.permissions import IsAuthorOfPost
 
 # Create your views here.
 
-class PostViewSet(viewsets.ModelViewset):
+class PostViewSet(viewsets.ModelViewSet):
+    '''Menampilkan Postingan yang tersimpan'''
     queryset = Post.objects.order_by('-created_at')
     serializer_class = PostSerializer
 

@@ -1,5 +1,6 @@
 (function() {
-    'use strict': angular
+'use strict';
+angular
         .module('thinkster.posts.services')
         .factory('Posts', Posts);
 

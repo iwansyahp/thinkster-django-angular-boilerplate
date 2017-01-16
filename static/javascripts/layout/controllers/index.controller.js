@@ -4,6 +4,7 @@
 */
 (function(){
     'use strict';
+    
     angular
         .module('thinkster.layout.controllers')
         .controllers('IndexController', IndexController);
@@ -18,7 +19,7 @@
 
       vm.isAuthenticated = Authentication.isAuthenticated();
 
-      vm.posts = []
+      vm.posts = [];
 
       activate();
 
@@ -28,11 +29,12 @@
     * @memberOf thinkster.layout.controllers.IndexController
     */
     function activate(){
-        Posts.all().then(postsSuccessFn, postsErrorFn)
+        Posts.all().then(postsSuccessFn, postsErrorFn);
 
         $scope.$on('post.created', function(event, post){
             vm.posts.unshift(post);
         });
+
         $scope.$on('post.created.error', function(){
             vm.posts.shift();
         });
