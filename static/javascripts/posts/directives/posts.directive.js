@@ -13,7 +13,7 @@
   * @namespace Posts
   */
   function posts(){
-      /**
+    /**
     * @name directive
     * @desc The directive to be returned
     * @memberOf thinkster.posts.directives.Posts

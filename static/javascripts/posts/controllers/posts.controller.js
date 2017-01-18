@@ -28,8 +28,24 @@
     * @memberOf thinkster.posts.controllers.PostsController
     */
     function activate() {
-      $scope.$watchCollection(function () { return $scope.posts; }, render);
-      $scope.$watch(function () { return $(window).width(); }, render);
+
+      /**
+      * Because we do not have direct access to the ViewModel
+      * that posts is stored on, we watch $scope.posts instead of
+      * vm.posts. Furthermore, we use $watchCollection here 
+      * because $scope.posts is an array. $watch watches the 
+      * object's reference, not it's actual value. $watchCollection
+      * watches the value of an array from changes. If we used $watch here
+      * instead of $watchCollection, the changes caused by $scope.posts.shift()
+      * and $scope.posts.unshift() would not trigger the watcher.
+      */
+      $scope.$watchCollection(function () { 
+        return $scope.posts; 
+      }, render);
+
+      $scope.$watch(function () { 
+        return $(window).width(); 
+      }, render);
     }
 
 

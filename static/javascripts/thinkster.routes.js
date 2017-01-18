@@ -22,7 +22,18 @@
                 controller: 'LoginController',
                 controllerAs: 'vm',
                 templateUrl: '/static/templates/authentication/login.html'
-            }).when('/', {
+            })
+            .when('/+:username', {
+                controller: 'ProfileController',
+                controllerAs: 'vm',
+                templateUrl: '/static/templates/profiles/profile.html'
+            })
+            .when('/+:username/settings', {
+                controller: 'ProfileSettingsController',
+                controllerAs: 'vm',
+                templateUrl: '/static/templates/profiles/settings.html'
+            })
+            .when('/', {
                 controller: 'IndexController',
                 controllerAs: 'vm',
                 templateUrl: '/static/templates/layout/index.html'

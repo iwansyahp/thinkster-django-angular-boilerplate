@@ -2,12 +2,12 @@
 * IndexController
 * @namespace thinkster.layout.controllers
 */
-(function(){
+(function() {
     'use strict';
-    
+
     angular
         .module('thinkster.layout.controllers')
-        .controllers('IndexController', IndexController);
+        .controller('IndexController', IndexController);
 
     IndexController.$inject = ['$scope', 'Authentication', 'Posts', 'Snackbar'];
 
@@ -28,18 +28,19 @@
     * @desc Actions to be performed when this controller is instantiated
     * @memberOf thinkster.layout.controllers.IndexController
     */
-    function activate(){
+    function activate() {
         Posts.all().then(postsSuccessFn, postsErrorFn);
 
+        // akan di-eks ketika user membuat post
         $scope.$on('post.created', function(event, post){
             vm.posts.unshift(post);
         });
-
+        // akan menghapus post dari posts ketika terima error status code
         $scope.$on('post.created.error', function(){
             vm.posts.shift();
         });
 
-         /**
+      /**
       * @name postsSuccessFn
       * @desc Update posts array on view
       */

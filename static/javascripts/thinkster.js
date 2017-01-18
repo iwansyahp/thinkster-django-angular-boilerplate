@@ -6,9 +6,10 @@
             'thinkster.config',
             'thinkster.routes',
             'thinkster.authentication',
+            'thinkster.utils', // snackbar.
             'thinkster.layout',
             'thinkster.posts',
-            'thinkster.utils'
+            'thinkster.profiles'
         ]).run(run);
 
     run.$inject = ['$http'];

@@ -1,6 +1,11 @@
+/**
+* Posts
+* @namespace thinkster.posts.services
+*/
 (function() {
 'use strict';
-angular
+
+    angular
         .module('thinkster.posts.services')
         .factory('Posts', Posts);
 
@@ -39,7 +44,7 @@ angular
         * @memberOf thinkster.posts.services.Posts
         */
         function create(content){
-            return $http.post('/api/v1/posts/',{
+            return $http.post('/api/v1/posts/', {
                 content: content
             });
         }
@@ -51,7 +56,7 @@ angular
          * @returns {Promise}
          * @memberOf thinkster.posts.services.Posts
          */
-        function get(username){
+        function get(username) {
             return $http.get('/api/v1/accounts/' + username + '/posts/');
         }
     }

@@ -137,7 +137,6 @@
             });
         }
 
-
         /**
          * @name setAuthenticatedAccount
          * @desc Stringify the account object and store it in a cookie

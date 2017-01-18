@@ -8,12 +8,12 @@
         .module('thinkster.authentication.controllers')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', '$scope', 'Authentication'];
+    LoginController.$inject = ['$location', '$scope', 'Authentication', 'Snackbar'];
 
     /**
      * @namespace LoginController
      */
-    function LoginController($location, $scope, Authentication) {
+    function LoginController($location, $scope, Authentication, Snackbar) {
         var vm = this;
         vm.login = login;
 

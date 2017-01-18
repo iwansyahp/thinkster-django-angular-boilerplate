@@ -8,7 +8,7 @@
 
     angular
         .module('thinkster.utils.services')
-        .factory('Snackbar', Snackbar)
+        .factory('Snackbar', Snackbar);
     
     /**
   * @namespace Snackbar
@@ -36,7 +36,7 @@
     */
 
     function _snackbar(content, options){
-        options = _.extend({timeout: 3000}, options);
+        options = _.extend({ timeout: 3000 }, options);
         options.content = content;
 
         $.snackbar(options);
