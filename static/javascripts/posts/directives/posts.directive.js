@@ -9,7 +9,7 @@
         .module('thinkster.posts.directives')
         .directive('posts'. posts);
     
-    /**
+  /**
   * @namespace Posts
   */
   function posts(){
@@ -29,6 +29,7 @@
         },
         templateUrl: '/static/templates/posts/posts.html'
     };
+
     return directive;
   }
 })();

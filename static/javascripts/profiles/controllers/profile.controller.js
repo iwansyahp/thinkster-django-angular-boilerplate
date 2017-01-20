@@ -46,10 +46,10 @@
       */
 		      function profileErrorFn(data, status, headers, config) {
 		        $location.url('/');
-		        Snackbar.error('That user does not exist.');
+		        Snackbar.error('There is no users with that username.');
 		      }
 
-				      /**
+				 /**
 		        * @name postsSucessFn
 		        * @desc Update `posts` on viewmodel
 		        */
@@ -57,13 +57,13 @@
 		        vm.posts = data.data;
 		      }
 
-
 		      /**
 		        * @name postsErrorFn
 		        * @desc Show error snackbar
 		        */
 		      function postsErrorFn(data, status, headers, config) {
-		        Snackbar.error(data.data.error);
+		        //Snackbar.error(data.data.error);
+		        Snackbar.error('There is no posts.');
 		      }
     	}
   	}

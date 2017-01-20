@@ -29,6 +29,7 @@
     * @memberOf thinkster.layout.controllers.IndexController
     */
     function activate() {
+      
         Posts.all().then(postsSuccessFn, postsErrorFn);
 
         // akan di-eks ketika user membuat post

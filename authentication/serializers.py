@@ -16,6 +16,7 @@ class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         ''' Metada untuk Account yang akan digunakan '''
         model = Account #karena class (super) ini adalah Serializer untuk model
+        
         fields = ('id', 'email', 'username',
                   'created_at', 'updated_at',
                   'first_name', 'last_name',

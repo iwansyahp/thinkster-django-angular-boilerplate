@@ -3,7 +3,7 @@
 * @namespace thinkster.profiles.controllers
 */
 (function(){
-	'use strict'
+	'use strict';
 
 	angular
 		.module('thinkster.profiles.controllers')
